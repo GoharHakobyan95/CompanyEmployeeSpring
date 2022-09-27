@@ -46,19 +46,15 @@ public class EmployeeController {
     @PostMapping("/employees/add")
     public String addEmployee(@ModelAttribute Employee employee,
                               @RequestParam("employeeImage") MultipartFile file) throws IOException {
-        if (employee.getCompany() != null && employee.getCompany().getId() == 0) {
-            employee.setCompany(null);
-        }
         if (!file.isEmpty() && file.getSize() > 0) {
             String fileName = System.currentTimeMillis() + "_" + file.getOriginalFilename();
             File newFile = new File(folderPath + File.separator + fileName);
             file.transferTo(newFile);
             employee.setPicUrl(fileName);
         }
-        Company company = employee.getCompany();
-        employeeRepository.save(employee);
+        Company company  = employee.getCompany();
         company.setSize(company.getSize() + 1);
-        companyRepository.save(company);
+        employeeRepository.save(employee);
         return "redirect:/employees";
     }
 
