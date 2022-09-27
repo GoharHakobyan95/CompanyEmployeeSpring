@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body id="main-container" class="default">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Add new Company</h4>
+                </div>
+                <div class="card-content">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <form action="/companies/add" method="post" >
+                                    <div class="form-group row">
+                                        <label for="name"class="col-sm-2 col-form-label">Name</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" name="name" class="form-control" id="name" placeholder="Name">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="size" class="col-sm-2 col-form-label">Count of employees</label>
+                                        <div class="col-sm-10">
+                                            <input type="number" name="size" class="form-control" id="size" placeholder="Count">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="address" class="col-sm-2 col-form-label">Address</label>
+                                        <div class="col-sm-10">
+                                            <input type="address" name="address" class="form-control" id="address" placeholder="Address">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-10">
+                                            <button type="submit" class="btn btn-primary">ADD</button>   <button type="reset" class="btn btn-outline-warning">Reset</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END: Card DATA-->
+</main>
+</body>
+</html>
