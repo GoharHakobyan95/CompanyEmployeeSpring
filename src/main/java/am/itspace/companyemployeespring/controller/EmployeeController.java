@@ -18,7 +18,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 public class EmployeeController {
@@ -54,7 +53,7 @@ public class EmployeeController {
         }
         Company company  = employee.getCompany();
         company.setSize(company.getSize() + 1);
-        employeeRepository.save(employee);
+        employeeRepository.save(employee);//tuyn es chgitey vor springy eeeedqan xelaci e, company name-ov haskanum e vor pti dra obyekty sarqi..hmmm shalt lav e apreq nor infoyi hamar))
         return "redirect:/employees";
     }
 

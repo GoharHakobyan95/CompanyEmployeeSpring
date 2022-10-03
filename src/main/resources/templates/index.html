@@ -15,7 +15,7 @@
     <!-- END Template CSS-->
 
     <!-- START: Page CSS-->
-    <link rel="stylesheet"  href="/vendors/chartjs/Chart.min.css">
+    <link rel="stylesheet" href="/vendors/chartjs/Chart.min.css">
     <!-- END: Page CSS-->
 
     <!-- START: Page CSS-->
@@ -69,31 +69,61 @@
 <!-- END: APP JS-->
 
 <div th:fragment="footerImport">
-<!-- START: Page Vendor JS-->
-<script src="/vendors/raphael/raphael.min.js"></script>
-<script src="/vendors/morris/morris.min.js"></script>
-<script src="/vendors/chartjs/Chart.min.js"></script>
-<script src="/vendors/starrr/starrr.js"></script>
-<script src="/vendors/jquery-flot/jquery.canvaswrapper.js"></script>
-<script src="/vendors/jquery-flot/jquery.colorhelpers.js"></script>
-<script src="/vendors/jquery-flot/jquery.flot.js"></script>
-<script src="/vendors/jquery-flot/jquery.flot.saturated.js"></script>
-<script src="/vendors/jquery-flot/jquery.flot.browser.js"></script>
-<script src="/vendors/jquery-flot/jquery.flot.drawSeries.js"></script>
-<script src="/vendors/jquery-flot/jquery.flot.uiConstants.js"></script>
-<script src="/vendors/jquery-flot/jquery.flot.legend.js"></script>
-<script src="/vendors/jquery-flot/jquery.flot.pie.js"></script>
-<script src="/vendors/chartjs/Chart.min.js"></script>
-<script src="/vendors/jquery-jvectormap/jquery-jvectormap-2.0.3.min.js"></script>
-<script src="/vendors/jquery-jvectormap/jquery-jvectormap-world-mill.js"></script>
-<script src="/vendors/jquery-jvectormap/jquery-jvectormap-de-merc.js"></script>
-<script src="/vendors/jquery-jvectormap/jquery-jvectormap-us-aea.js"></script>
-<script src="/vendors/apexcharts/apexcharts.min.js"></script>
-<!-- END: Page Vendor JS-->
+    <!-- START: Page Vendor JS-->
+    <script src="/vendors/raphael/raphael.min.js"></script>
+    <script src="/vendors/morris/morris.min.js"></script>
+    <script src="/vendors/chartjs/Chart.min.js"></script>
+    <script src="/vendors/starrr/starrr.js"></script>
+    <script src="/vendors/jquery-flot/jquery.canvaswrapper.js"></script>
+    <script src="/vendors/jquery-flot/jquery.colorhelpers.js"></script>
+    <script src="/vendors/jquery-flot/jquery.flot.js"></script>
+    <script src="/vendors/jquery-flot/jquery.flot.saturated.js"></script>
+    <script src="/vendors/jquery-flot/jquery.flot.browser.js"></script>
+    <script src="/vendors/jquery-flot/jquery.flot.drawSeries.js"></script>
+    <script src="/vendors/jquery-flot/jquery.flot.uiConstants.js"></script>
+    <script src="/vendors/jquery-flot/jquery.flot.legend.js"></script>
+    <script src="/vendors/jquery-flot/jquery.flot.pie.js"></script>
+    <script src="/vendors/chartjs/Chart.min.js"></script>
+    <script src="/vendors/jquery-jvectormap/jquery-jvectormap-2.0.3.min.js"></script>
+    <script src="/vendors/jquery-jvectormap/jquery-jvectormap-world-mill.js"></script>
+    <script src="/vendors/jquery-jvectormap/jquery-jvectormap-de-merc.js"></script>
+    <script src="/vendors/jquery-jvectormap/jquery-jvectormap-us-aea.js"></script>
+    <script src="/vendors/apexcharts/apexcharts.min.js"></script>
+    <!-- END: Page Vendor JS-->
+    <div class="navbar-right ml-auto h-100">
+        <ul class="ml-auto p-0 m-0 list-unstyled d-flex top-icon h-100">
+            <li class="d-inline-block align-self-center  d-block d-lg-none">
+                <a href="index.html#" class="nav-link mobilesearch" data-toggle="dropdown"
+                   aria-expanded="false"><i class="icon-magnifier h4"></i>
+                </a>
+            </li>
+            <li class="dropdown user-profile align-self-center d-inline-block">
+                <th:block th:if="${currentUser != null}">
+                    <a href="/#" class="nav-link py-0" data-toggle="dropdown" aria-expanded="false">
+                    </a>
 
-<!-- START: Page JS-->
-<script src="/js/home.script.js"></script>
-<!-- END: Page JS-->
+                    <div class="dropdown-menu border dropdown-menu-right p-0">
+                        <a href="/logout" class="dropdown-item px-2 text-danger align-self-center d-flex">
+                            <span class="icon-logout mr-2 h6  mb-0"></span> Sign Out</a>
+                    </div>
+
+                </th:block>
+                <!--/*@thymesVar id="currentUser" type=""*/-->
+                <th:block th:if="${currentUser == null}">
+                    <a href="/loginPage"><i class="icon-layers"></i>Login</a><br>
+                    <a href="/register"><i class="icon-layers"></i>Register</a><br>
+
+                </th:block>
+                <th:block th:if="${currentUser != null}">
+                    <a href="/users">Users</a>
+                </th:block>
+            </li>
+        </ul>
+        </ul>
+    </div>
+    <!-- START: Page JS-->
+    <script src="/js/home.script.js"></script>
+    <!-- END: Page JS-->
 </div>
 </body>
 <!-- END: Body-->
